@@ -1,0 +1,67 @@
+@use "variables" as *;
+
+.more-modal-post {
+    font-size: $medium-font-size;
+
+    &.fade {
+        background-color: rgba($color: $black-color, $alpha: 0.4);
+    }
+
+    .modal-content {
+        overflow: hidden;
+    }
+    .header {
+        background-color: $white-color;
+        font-size: $bigger-medium-font-size;
+    }
+    .body {
+        .item {
+            font-size: $medium-font-size;
+            border-top: 1px solid $separator-light-color;
+            background-color: $white-color;
+
+            & + .item {
+                border-top: 1px solid $separator-light-color;
+            }
+
+            &:active {
+                background-color: rgba($color: $black-color, $alpha: 0.1);
+            }
+
+            .title {
+                color: $black-color;
+            }
+
+            .icon {
+                width: 24px;
+                height: 24px;
+                color: $black-color;
+                fill: $black-color;
+            }
+        }
+    }
+}
+
+body[data-theme="dark"] {
+    .more-modal-post {
+        .header {
+            background-color: $second-black-color;
+            color: $white-color;
+        }
+        .body {
+            .item {
+                background-color: $second-black-color;
+                border-color: $separator-dark-color;
+
+                &:active {
+                    background-color: rgba($color: $black-color, $alpha: 0.9);
+                }
+                .title,
+                .icon {
+                    color: $white-color;
+                    fill: $white-color;
+                }
+            }
+        }
+    }
+}

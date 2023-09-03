@@ -1,0 +1,41 @@
+@use "../variables" as *;
+
+.header-post {
+    .profile-link {
+        .avatar {
+            height: $medium-avatar-size;
+            width: $medium-avatar-size;
+        }
+        .nickname {
+            font-size: $medium-font-size;
+
+            &:hover {
+                opacity: 0.8;
+            }
+            &:active {
+                opacity: 0.6;
+            }
+        }
+    }
+
+    .extension {
+        cursor: pointer;
+        &:hover {
+            color: $gray-color;
+        }
+        &:active {
+            opacity: 0.8;
+        }
+    }
+}
+
+body[data-theme="dark"] {
+    .header-post {
+        background-color: $black-color;
+        color: $white-color;
+
+        .timeline {
+            color: $gray-color;
+        }
+    }
+}

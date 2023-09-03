@@ -1,0 +1,36 @@
+@use "variables" as *;
+
+.log-out-modal {
+    .body {
+        background-color: $white-color;
+        color: $black-color;
+        .body-title {
+            color: currentColor;
+        }
+        .body-text {
+            color: $gray-color;
+            font-size: $medium-font-size;
+        }
+    }
+    .footer {
+        background-color: $white-color;
+        color: currentColor;
+        transition: 0.2s linear;
+        &:hover {
+            background-color: rgba($color: $black-color, $alpha: 0.08);
+        }
+        .footer-text {
+            font-size: $medium-font-size;
+        }
+    }
+}
+
+body[data-theme="dark"] {
+    .log-out-modal {
+        .body,
+        .footer {
+            background-color: $second-black-color;
+            color: $white-color;
+        }
+    }
+}

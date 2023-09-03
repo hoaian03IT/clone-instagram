@@ -1,0 +1,40 @@
+@use "variables" as *;
+
+.home-screen {
+    margin-left: auto;
+    padding-top: 22px;
+    width: calc(100% - $nav-wide-width);
+    height: 100%;
+
+    .main-content {
+        max-width: $main-content-width;
+        width: 100%;
+    }
+
+    .feed-content {
+        padding-left: 64px;
+        width: $feed-sidebar-width;
+        .nickname,
+        .username {
+            line-height: 1;
+            font-size: $medium-font-size;
+        }
+        .username {
+            color: $gray-color;
+        }
+        .switch {
+            font-size: $small-font-size;
+            user-select: none;
+            cursor: pointer;
+        }
+    }
+}
+
+body[data-theme="dark"] {
+    .home-screen {
+        background-color: $black-color;
+    }
+    .nickname {
+        color: $white-color;
+    }
+}

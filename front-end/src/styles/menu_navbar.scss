@@ -1,0 +1,106 @@
+@use "variables" as *;
+
+.menu-navbar {
+    display: none;
+    position: absolute;
+    bottom: 100%;
+    width: $menu-navbar-width;
+    border-radius: 16px;
+    color: $black-color;
+    background-color: $white-color;
+    box-shadow: 0 4px 12px rgba($black-color, 0.15);
+    transition: all 0.2s ease-out;
+    user-select: none;
+    &.show {
+        display: block;
+    }
+
+    &-header {
+        padding: 14px 18px;
+        color: currentColor;
+        border-bottom: 1px solid $separator-light-color;
+
+        .header-back-icon {
+            color: $separator-light-color;
+            padding: 6px;
+            margin-left: -6px;
+            margin-right: 8px;
+            cursor: pointer;
+        }
+        .header-title {
+            font-weight: 500;
+        }
+        .header-icon {
+            margin-left: auto;
+        }
+    }
+
+    &-body {
+        .wrapper {
+            padding: 8px;
+
+            &:nth-of-type(2) {
+                border-bottom: 1px solid $separator-light-color;
+                border-top: 5px solid $separator-light-color;
+            }
+
+            .item {
+                padding: 14px 18px;
+                width: 100%;
+                border-radius: 6px;
+                color: currentColor;
+                background-color: $white-color;
+                transition: background-color 0.2s ease-out;
+                &:hover {
+                    background-color: rgba($color: $black-color, $alpha: 0.05);
+                }
+
+                &:active {
+                    background-color: rgba($color: $black-color, $alpha: 0.08);
+                    opacity: 0.5;
+                }
+
+                .icon {
+                    margin-right: 12px;
+                }
+
+                .title {
+                    font-size: $medium-font-size;
+                    font-weight: 500;
+                }
+                .switch-input {
+                    box-shadow: none;
+                    border: none;
+                    &:focus {
+                        box-shadow: none;
+                        border: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+body[data-theme="dark"] {
+    .menu-navbar {
+        background-color: $second-black-color;
+        color: $white-color;
+
+        &-body {
+            .wrapper:nth-of-type(2) {
+                border-bottom: 1px solid $separator-dark-color;
+                border-top: 5px solid $separator-dark-color;
+            }
+            .item {
+                background-color: $second-black-color;
+
+                &:hover {
+                    background-color: $hover-dark-bgc;
+                }
+                &:active {
+                    background-color: $active-dark-bgc;
+                }
+            }
+        }
+    }
+}

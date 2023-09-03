@@ -1,0 +1,64 @@
+@use "variables" as *;
+
+.notification-card {
+    padding: 8px 24px;
+    border: none;
+    border-radius: 0;
+    background-color: $white-color;
+    cursor: pointer;
+    &:hover {
+        background-color: rgba($color: $black-color, $alpha: 0.02);
+    }
+    &:active {
+        background-color: rgba($color: $black-color, $alpha: 0.05);
+    }
+    .card-img {
+        height: $large-avatar-size;
+        width: $large-avatar-size;
+        border-radius: 50%;
+    }
+    .card-body {
+        padding-top: 0;
+        padding-bottom: 0;
+        .card-text {
+            color: $black-color;
+            font-size: $medium-font-size;
+            line-height: 1.2;
+            .nickname-link {
+                color: currentColor;
+                display: inline-block;
+                font-weight: 500;
+            }
+            .time-happened {
+                margin-left: 6px;
+                color: $light-black-color;
+            }
+            & + .card-text {
+                margin-bottom: 8px;
+            }
+        }
+    }
+    .follow-btn {
+        font-size: $medium-font-size;
+        font-weight: 500;
+    }
+}
+
+body[data-theme="dark"] {
+    .notification-card {
+        background-color: $black-color;
+        &:hover {
+            background-color: $hover-dark-bgc;
+        }
+        &:active {
+            background-color: $active-dark-bgc;
+        }
+        .card-body .card-text {
+            color: $white-color;
+            font-weight: 100;
+            .time-happened {
+                font-weight: 400;
+            }
+        }
+    }
+}

@@ -1,0 +1,52 @@
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px,
+);
+
+$nav-wide-width: 335px;
+$nav-medium-width: 244px;
+$nav-narrow-width: 75px;
+$sidebar-width: 397px;
+$search-box-height: 40px;
+$menu-navbar-width: 266px;
+$main-content-width: 630px;
+$feed-sidebar-width: 319px;
+$smaller-avatar-size: 24px;
+$small-avatar-size: 28px;
+$medium-avatar-size: 34px;
+$large-avatar-size: 44px;
+$post-width: 468px;
+
+$bigger-medium-font-size: 16px;
+$medium-font-size: 14px;
+$small-font-size: 12px;
+
+$red-color: #ff3040;
+$black-color: #000;
+$second-black-color: #262626;
+$light-black-color: #737373;
+$white-color: #fff;
+$gray-color: #7f7f7f;
+$primary-color: #0095f6;
+$hover-blue-color: #1877f2;
+$dark-blue-color: #00376b;
+$separator-light-color: #e1e3e1;
+$separator-dark-color: #353535;
+$hover-dark-bgc: rgba(
+    $color: $white-color,
+    $alpha: 0.1,
+);
+$active-dark-bgc: rgba(
+    $color: $white-color,
+    $alpha: 0.15,
+);
+
+@mixin limit-line {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow-x: hidden;
+}

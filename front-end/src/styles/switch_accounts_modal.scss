@@ -1,0 +1,64 @@
+@use "variables" as *;
+$avatar-size: 56px;
+$verified-icon-size: 23px;
+.switch-account-modal {
+    .header {
+        background-color: $white-color;
+        color: $black-color;
+        .heading {
+            color: currentColor;
+            font-size: $bigger-medium-font-size;
+        }
+    }
+    .body {
+        background-color: $white-color;
+        color: $black-color;
+        .list-account {
+            .item-account {
+                .image-account {
+                    height: $avatar-size;
+                    width: $avatar-size;
+                }
+                .nickname-account {
+                    margin-left: 12px;
+                    font-size: $medium-font-size;
+                    color: currentColor;
+                }
+                .verified-icon {
+                    height: $verified-icon-size;
+                    width: $verified-icon-size;
+                    color: $primary-color;
+                }
+                & + .item-account {
+                    margin: 12px 0;
+                }
+            }
+        }
+    }
+    .footer {
+        background-color: $white-color;
+        color: $black-color;
+        .text {
+            font-size: $medium-font-size;
+            cursor: pointer;
+            user-select: none;
+        }
+    }
+}
+
+body[data-theme="dark"] {
+    .switch-account-modal {
+        .header,
+        .body,
+        .footer {
+            background-color: $second-black-color;
+            color: $white-color;
+
+            .text {
+                &:hover {
+                    color: $white-color;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,60 @@
+@use "variables" as *;
+
+.report-problem-modal {
+    .header {
+        background-color: $white-color;
+        color: $black-color;
+    }
+    .body {
+        background-color: $white-color;
+        .form-submit {
+            .form-textarea {
+                height: 160px;
+                border-color: $separator-light-color;
+            }
+            .btn-submit,
+            .btn-add-file {
+                font-size: $medium-font-size;
+            }
+            .files-list {
+                max-height: 200px;
+                overflow-y: auto;
+                .file-item {
+                    & + .file-item {
+                        border-top: 1px solid $separator-light-color;
+                    }
+                    .delete-icon {
+                        cursor: pointer;
+                    }
+                    .file-name {
+                        max-width: 90%;
+                        @include limit-line();
+                    }
+                }
+            }
+        }
+        .more-info {
+            color: $gray-color;
+            font-size: $small-font-size;
+            line-height: 1.4;
+        }
+    }
+}
+
+body[data-theme="dark"] {
+    .report-problem-modal {
+        .header,
+        .body {
+            background-color: $second-black-color;
+            color: $white-color;
+        }
+        .form-submit .form-textarea {
+            border-color: $separator-dark-color;
+            color: $white-color;
+            background-color: $second-black-color;
+            &::placeholder {
+                color: $gray-color;
+            }
+        }
+    }
+}

@@ -1,0 +1,35 @@
+@use "variables" as *;
+
+.status-bar-post {
+    .interactive-icon {
+        width: 24px;
+        height: 24px;
+        color: currentColor;
+        cursor: pointer;
+        & + .interactive-icon {
+            margin-left: 12px;
+        }
+
+        &:hover {
+            opacity: 0.6;
+        }
+        &:active {
+            opacity: 0.4;
+        }
+
+        &.liked-icon {
+            color: $red-color;
+            animation: popUp 0.2s ease-in-out 1;
+        }
+    }
+    .like-number {
+        font-size: $medium-font-size;
+        user-select: none;
+    }
+}
+
+body[data-theme="dark"] {
+    .status-bar-post {
+        color: $white-color;
+    }
+}

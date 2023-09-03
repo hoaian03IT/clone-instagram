@@ -1,0 +1,30 @@
+@use "variables" as *;
+
+.notification-bar {
+    height: 100%;
+    background-color: $white-color;
+    color: $black-color;
+    .heading {
+        padding: 16px 24px 24px;
+        font-weight: 700;
+    }
+
+    .notification-part {
+        padding: 8px 0;
+        border-bottom: 1px solid $separator-light-color;
+        &:nth-of-type(3) {
+            border-bottom: none;
+        }
+        .title {
+            padding: 12px 24px;
+            font-weight: 700;
+        }
+    }
+}
+
+body[data-theme="dark"] {
+    .notification-bar {
+        background-color: $black-color;
+        color: $white-color;
+    }
+}

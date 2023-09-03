@@ -1,0 +1,38 @@
+@use "variables" as *;
+
+.user-comment {
+    & + .user-comment {
+        margin-top: 20px;
+    }
+
+    .user img {
+        width: $medium-avatar-size;
+        height: $medium-avatar-size;
+    }
+
+    .comment {
+        .nickname {
+            font-size: $medium-font-size;
+
+            &:active {
+                opacity: 0.8;
+            }
+        }
+        .text {
+            font-size: $medium-font-size;
+        }
+        .timeline,
+        .reply {
+            color: $gray-color;
+            font-size: $small-font-size;
+        }
+
+        .reply {
+            cursor: pointer;
+
+            &:active {
+                opacity: 0.8;
+            }
+        }
+    }
+}

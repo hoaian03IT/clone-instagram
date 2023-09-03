@@ -1,0 +1,94 @@
+@use "../variables" as *;
+
+.share-post-to-message {
+    .header {
+        border: none;
+    }
+    .body {
+        min-height: 200px;
+        max-height: 60vh;
+        .search-area {
+            border-top: 1px solid $separator-light-color;
+            border-bottom: 1px solid $separator-light-color;
+
+            .tag-name {
+                user-select: none;
+                background-color: rgba($color: $primary-color, $alpha: 0.15);
+                border-radius: 20px;
+                color: $primary-color;
+                .remove-icon {
+                    cursor: pointer;
+                }
+            }
+
+            .search-input {
+                flex: 1;
+                font-size: $medium-font-size;
+                border: none;
+            }
+        }
+
+        .search-list {
+            overflow-y: auto;
+            .search-item {
+                user-select: none;
+                cursor: pointer;
+                &:hover {
+                    background-color: rgba($color: $black-color, $alpha: 0.05);
+                }
+                &:active {
+                    background-color: rgba($color: $black-color, $alpha: 0.1);
+                }
+
+                .avatar {
+                    height: $large-avatar-size;
+                    width: $large-avatar-size;
+                }
+                .username,
+                .nickname {
+                    line-height: 1;
+                    font-size: $medium-font-size;
+                }
+                .nickname {
+                    color: $gray-color;
+                }
+                .select-input {
+                    height: 24px;
+                    width: 24px;
+                    border-radius: 100px;
+                }
+            }
+        }
+
+        .form-send-post {
+            border-top: 1px solid $separator-light-color;
+            .message-input {
+                font-size: $medium-font-size;
+                border: none;
+            }
+        }
+    }
+}
+
+body[data-theme="dark"] {
+    .share-post-to-message {
+        .header,
+        .body,
+        .search-input,
+        .message-input {
+            background-color: $second-black-color;
+            color: $white-color;
+        }
+        .search-input,
+        .message-input {
+            &::placeholder {
+                color: $gray-color;
+            }
+        }
+
+        .search-area,
+        .form-send-post {
+            border-color: $separator-dark-color;
+        }
+    }
+}

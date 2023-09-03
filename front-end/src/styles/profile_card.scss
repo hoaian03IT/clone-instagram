@@ -1,0 +1,52 @@
+@use "variables" as *;
+
+.profile-card {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    transition: 0.2s ease-out;
+
+    .card-img {
+        height: $large-avatar-size;
+        width: $large-avatar-size;
+        border-radius: 50%;
+    }
+    .card-body {
+        .title {
+            font-size: $medium-font-size;
+            .nickname {
+                color: $black-color;
+            }
+            .verified-icon {
+                margin-left: 4px;
+            }
+        }
+        .card-text {
+            font-size: $medium-font-size;
+            color: $light-black-color;
+        }
+    }
+    .delete-icon {
+        color: $light-black-color;
+        cursor: pointer;
+        transition: 0.2s ease-out;
+
+        &:hover {
+            color: $black-color;
+            transform: scale(1.1);
+        }
+        &:active {
+            opacity: 0.5;
+        }
+        &:focus {
+            border: none;
+            outline: none;
+        }
+    }
+}
+
+body[data-theme="dark"] {
+    .profile-card .nickname {
+        color: $white-color !important;
+    }
+}

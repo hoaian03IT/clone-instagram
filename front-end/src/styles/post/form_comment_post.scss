@@ -1,0 +1,26 @@
+@use "../variables" as *;
+
+.form-comment-post {
+    .quick-comment-input {
+        padding: 0;
+        height: 22px;
+        min-height: 0;
+        font-size: $medium-font-size;
+        border: none;
+        resize: none;
+    }
+    .send-comment {
+        font-size: $medium-font-size;
+        cursor: pointer;
+    }
+}
+
+body[data-theme="dark"] {
+    .quick-comment-input {
+        background-color: $black-color;
+        color: $white-color;
+        &::placeholder {
+            color: $light-black-color;
+        }
+    }
+}

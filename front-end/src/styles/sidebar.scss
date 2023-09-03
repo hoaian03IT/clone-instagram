@@ -1,0 +1,32 @@
+@use "_variables" as *;
+.sidebar {
+    position: absolute;
+    top: 0;
+    left: $nav-narrow-width !important;
+    bottom: 0;
+    width: $sidebar-width;
+    background-color: $white-color;
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+
+    box-shadow: 10px 0px 20px 0px rgba($color: $black-color, $alpha: 0.15);
+    transition: 0.2s ease-out;
+    overflow-x: hidden;
+    overflow-y: auto;
+    opacity: 1;
+    transform: translateZ(-10px); // make sidebar under navbar
+    &.hide {
+        transform: translateX(-200%);
+        box-shadow: none;
+        opacity: 0;
+    }
+}
+
+body[data-theme="dark"] {
+    .sidebar {
+        background-color: $black-color;
+        color: $white-color;
+        border: 1px solid $separator-dark-color;
+        box-shadow: none;
+    }
+}

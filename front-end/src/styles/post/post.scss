@@ -1,0 +1,63 @@
+@use "../variables" as *;
+
+@keyframes popUp {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.2);
+    }
+}
+
+.post {
+    width: $post-width;
+    border-bottom: 1px solid $separator-light-color;
+
+    .post-body {
+        border-color: transparent;
+
+        .card-body {
+            padding: 0;
+
+            .post-img {
+                object-fit: cover;
+                object-position: center;
+            }
+
+            .caption {
+                margin-top: 8px;
+                font-size: $medium-font-size;
+                .text {
+                    &.hide {
+                        @include limit-line();
+                    }
+                }
+                .view-more {
+                    color: $gray-color;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+body[data-theme="dark"] {
+    .post {
+        border-bottom: 1px solid $separator-dark-color;
+        background-color: $black-color;
+
+        .timeline {
+            color: $gray-color;
+        }
+
+        .nickname,
+        .post-body {
+            background-color: $black-color;
+            color: $white-color;
+        }
+
+        .quick-comment-input::placeholder {
+            color: $light-black-color;
+        }
+    }
+}

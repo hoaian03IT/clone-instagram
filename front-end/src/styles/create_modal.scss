@@ -1,0 +1,153 @@
+@use "variables" as *;
+$crop-image-size: 300px;
+$modal-width: calc(100vw - 100px);
+$height-modal: calc(100vh - 300px);
+
+.create-modal-width {
+    max-width: $height-modal;
+    min-width: 300px;
+}
+
+.create-modal {
+    user-select: none;
+    .header {
+        background-color: $white-color;
+        color: $black-color;
+        .heading {
+            margin: 0 auto;
+            color: currentColor;
+            font-weight: 500;
+        }
+        .next-text {
+            font-size: $medium-font-size;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        .back-icon {
+            color: currentColor;
+            fill: currentColor;
+            cursor: pointer;
+            &:active {
+                opacity: 0.6;
+            }
+        }
+    }
+    .body {
+        padding: 0;
+        height: $height-modal;
+        min-height: 300px;
+        overflow-y: auto;
+
+        &-icon {
+            height: 80px;
+            width: 80px;
+        }
+    }
+}
+
+.share-post {
+    .cropped-image {
+        width: $crop-image-size;
+        height: $crop-image-size;
+        border-radius: 10px;
+        box-shadow: 2px 2px 4px 4px rgba($color: $black-color, $alpha: 0.1);
+    }
+    &-body {
+        margin: 24px;
+        border: 1px solid $separator-light-color;
+        border-radius: 8px;
+        .avatar {
+            height: $small-avatar-size;
+            width: $small-avatar-size;
+        }
+        .nickname {
+            margin-left: 12px;
+            font-size: $medium-font-size;
+            color: currentColor;
+        }
+        .form-submit {
+            color: $black-color;
+            .caption-input {
+                padding-left: 20px;
+                padding-right: 20px;
+                resize: none;
+                border-top: none;
+                border-left: none;
+                border-right: none;
+                border-radius: 0;
+                border-color: $separator-light-color;
+                color: currentColor;
+                &:focus {
+                    border-color: $separator-light-color;
+                }
+            }
+            .limit-words {
+                bottom: 10px;
+                right: 20px;
+                font-size: $small-font-size;
+                color: $light-black-color;
+            }
+            .location {
+                &-input {
+                    padding-left: 20px;
+                    padding-right: 20px;
+                    border-top: none;
+                    border-left: none;
+                    border-right: none;
+                    border-bottom: 1px solid $separator-light-color;
+                    border-radius: 0;
+                    color: currentColor;
+                }
+                &-icon {
+                    width: 20px;
+                    height: 20px;
+                    right: 20px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+            }
+            .accordion-button {
+                color: currentColor;
+            }
+            .advance-item {
+                .more-info {
+                    font-size: $small-font-size;
+                    color: $light-black-color;
+                }
+
+                & + .advance-item {
+                    margin: 18px 0;
+                }
+            }
+        }
+    }
+}
+
+body[data-theme="dark"] {
+    .create-modal {
+        .header,
+        .body {
+            background-color: $second-black-color;
+            color: $white-color;
+        }
+    }
+
+    .share-post .form-submit {
+        color: $white-color;
+        .caption-input,
+        .location-input,
+        .accordion-button {
+            background-color: $second-black-color;
+
+            &::after {
+                filter: invert(100%);
+            }
+        }
+        .caption-input,
+        .location-input {
+            &::placeholder {
+                color: $gray-color;
+            }
+        }
+    }
+}
