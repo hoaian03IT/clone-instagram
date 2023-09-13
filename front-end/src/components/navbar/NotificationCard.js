@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button, Card } from "react-bootstrap";
+import { Button, Card, Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 import "~/styles/notification_card.scss";
@@ -11,6 +11,9 @@ export const NotificationCard = ({ img, userOnInstagram, userFollowing = [], tim
     return (
         <Card className="notification-card d-flex flex-row align-items-center">
             <Card.Img
+                as={Image}
+                className="avatar-large"
+                roundedCircle
                 src={img || "https://t4.ftcdn.net/jpg/05/49/98/39/360_F_549983970_bRCkYfk0P6PP5fKbMhZMIb07mCJ6esXL.jpg"}
                 alt="notification"
             />

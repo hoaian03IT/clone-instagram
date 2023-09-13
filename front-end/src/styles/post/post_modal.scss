@@ -1,6 +1,8 @@
 @use "../variables" as *;
 @use "sass:map";
 
+$height-modal: calc(100vh - 34px - 34px);
+
 .post-modal-width {
     max-width: calc(100% - 64px - 64px);
     min-width: 500px;
@@ -10,16 +12,20 @@
     .modal-content {
         margin: auto;
         max-height: calc(100vh - 40px);
-        height: calc(100vh - 34px - 34px);
+        height: $height-modal;
         border: none;
         background-color: transparent;
     }
     &-body {
         min-height: 14vmax;
         .image-post {
-            background-color: $white-color;
-            img {
+            width: $height-modal; // make square
+            &.loading {
+                @include loading-background-skeleton();
+            }
+            .image {
                 height: 100%;
+                @include fit-image();
             }
         }
         .interaction-part {
@@ -66,7 +72,6 @@
 body[data-theme="dark"] {
     .post-modal {
         &-body {
-            .image-post,
             .interaction-part {
                 background-color: $black-color;
                 border: 1px solid $separator-dark-color;

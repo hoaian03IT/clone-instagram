@@ -1,0 +1,17 @@
+@use "variables" as *;
+
+.skeleton-post {
+    .img {
+        height: $medium-avatar-size;
+        width: $medium-avatar-size;
+    }
+    .skeleton-post-body {
+        padding-top: 100%;
+        width: $post-width;
+        border-radius: 10px;
+    }
+}
+
+.loading {
+    @include loading-background-skeleton();
+}

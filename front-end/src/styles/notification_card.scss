@@ -12,11 +12,7 @@
     &:active {
         background-color: rgba($color: $black-color, $alpha: 0.05);
     }
-    .card-img {
-        height: $large-avatar-size;
-        width: $large-avatar-size;
-        border-radius: 50%;
-    }
+
     .card-body {
         padding-top: 0;
         padding-bottom: 0;

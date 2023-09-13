@@ -78,11 +78,15 @@ export const StatusBarPost = ({ className }) => {
                     )}
                 </div>
             </div>
-            {showLikes && (
-                <span className="like-number fw-bold">
-                    {likeNumber > 1 ? likeNumber + " likes" : likeNumber + " like"}
-                </span>
-            )}
+            <span className="like-number fw-bold">
+                {showLikes
+                    ? likeNumber > 1
+                        ? likeNumber + " likes"
+                        : likeNumber + " like"
+                    : liked
+                    ? "You and others"
+                    : ""}
+            </span>
         </div>
     );
 };

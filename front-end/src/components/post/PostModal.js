@@ -28,8 +28,8 @@ export const PostModal = () => {
                     variant="white"
                     onClick={closeModal}
                 />
-                <div className="image-post">
-                    <Image src={imagePost} alt="img-post" />
+                <div className={`image-post  h-100 ${!imagePost ? "loading" : ""}`}>
+                    {imagePost && <Image className="image" src={imagePost} alt="img-post ms-auto" />}
                 </div>
                 <div className="interaction-part d-flex flex-column h-100">
                     <HeaderPost className="header px-3 py-3" handleShowMoreModal={() => setShowMoreModal(true)} />

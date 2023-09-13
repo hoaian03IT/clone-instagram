@@ -59,12 +59,12 @@ button {
 }
 
 .btn-primary {
-    background-color: $primary-color;
+    background-color: $primary-color !important;
     &:hover {
-        background-color: $hover-blue-color;
+        background-color: $hover-blue-color !important;
     }
     &:active {
-        opacity: 0.9;
+        opacity: 0.9 !important;
         background-color: $primary-color !important;
     }
 }
@@ -73,20 +73,20 @@ button {
     background-color: $red-color !important;
 }
 
-.primary-text {
-    color: $primary-color;
-    border-color: $primary-color;
+.text-primary {
+    color: $primary-color !important;
+    border-color: $primary-color !important;
     &:hover {
-        color: $dark-blue-color;
+        color: $dark-blue-color !important;
     }
     &:active {
-        opacity: 0.5;
+        opacity: 0.5 !important;
     }
 }
 
-.secondary-text {
-    color: $red-color;
-    border-color: $primary-color;
+.text-secondary {
+    color: $red-color !important;
+    border-color: $primary-color !important;
 }
 
 .text-crop {
@@ -118,19 +118,23 @@ button {
 .avatar-medium {
     height: $medium-avatar-size;
     width: $medium-avatar-size;
+    @include fit-image();
 }
 
 .avatar-large {
     height: $large-avatar-size;
     width: $large-avatar-size;
+    @include fit-image();
 }
 
 .avatar-small {
     height: $small-avatar-size;
     width: $small-avatar-size;
+    @include fit-image();
 }
 
 .avatar-smaller {
     height: $smaller-avatar-size;
     width: $smaller-avatar-size;
+    @include fit-image();
 }

@@ -12,7 +12,7 @@ export const MoreModalBody = () => {
     return (
         <div>
             {followed && (
-                <button className="item d-block py-3 w-100 text-center secondary-text fw-bold" onClick={handleUnfollow}>
+                <button className="item d-block py-3 w-100 text-center text-secondary fw-bold" onClick={handleUnfollow}>
                     Unfollow
                 </button>
             )}

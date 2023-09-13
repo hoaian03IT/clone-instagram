@@ -20,7 +20,7 @@ export const FormCommentPost = ({ className }) => {
                 placeholder="Add a comment..."
             />
             {comment && (
-                <span className="send-comment ms-2 primary-text fw-semibold" onClick={handlePostComment}>
+                <span className="send-comment ms-2 text-primary fw-semibold" onClick={handlePostComment}>
                     Post
                 </span>
             )}

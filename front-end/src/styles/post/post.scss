@@ -16,12 +16,19 @@
     .post-body {
         border-color: transparent;
 
+        .wrapper-image {
+            background-color: rgba($color: $black-color, $alpha: 0.02);
+            padding-top: 100%;
+            &.loading {
+                @include loading-background-skeleton();
+            }
+        }
+
         .card-body {
             padding: 0;
 
             .post-img {
-                object-fit: cover;
-                object-position: center;
+                @include fit-image();
             }
 
             .caption {

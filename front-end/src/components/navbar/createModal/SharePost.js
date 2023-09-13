@@ -23,7 +23,7 @@ export const SharePost = ({
             </div>
             <div className="share-post-body">
                 <div className="m-3">
-                    <Image roundedCircle className="avatar" src={personalAvatar} alt="avatar-user" />
+                    <Image roundedCircle className="avatar-smaller" src={personalAvatar} alt="avatar-user" />
                     <span className="nickname fw-semibold">dangan_03</span>
                 </div>
                 <div>

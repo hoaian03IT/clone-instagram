@@ -44,12 +44,14 @@ export const CreateModal = ({ show, onHide }) => {
         setCroppedAreaPixels(croppedAreaPixels);
     }, []);
 
-    const handleNextStep = (e) => {
+    const handleNextStepAndShare = (e) => {
         if (e.target.textContent === "Next") {
             const croppedImg = getCroppedImg(uploadedImage, croppedAreaPixels);
             setCroppedImage(croppedImg);
         } else {
+            // share
             alert("Caption: " + caption + " Hide like: " + hideLikeAndView + " Hide comment: " + hideComment);
+            console.log(croppedImage);
             handleHideModal();
         }
     };
@@ -78,7 +80,7 @@ export const CreateModal = ({ show, onHide }) => {
                 )}
                 <span className="heading">{uploadedImage && !croppedImage ? "Crop" : "Create new post"}</span>
                 {(uploadedImage || croppedImage) && (
-                    <span className="primary-text next-text" onClick={(e) => handleNextStep(e)}>
+                    <span className="text-primary next-text" onClick={(e) => handleNextStepAndShare(e)}>
                         {croppedImage ? "Share" : "Next"}
                     </span>
                 )}

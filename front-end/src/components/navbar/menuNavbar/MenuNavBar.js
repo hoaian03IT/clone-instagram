@@ -7,11 +7,14 @@ import { ReportProblemModal } from "./modalMenuNavbar/ReportProblemModal";
 import { MenuNavBarItem } from "./MenuNavBarItem";
 import { dataMenuNavbar, titleMenuNavbar } from "~/configs/menuNavbar";
 import { ProviderContext } from "~/components/Provider";
-import { darkModeKey } from "~/constants";
 
 import "~/styles/menu_navbar.scss";
+import { useNavigate } from "react-router-dom";
+import { path } from "~/configs/path";
 
 export const MenuNavBar = forwardRef(({ show }, ref) => {
+    const navigate = useNavigate();
+
     const { darkMode, setDarkMode } = useContext(ProviderContext);
     const [data, setData] = useState(dataMenuNavbar);
     const [previousData, setPreviousData] = useState(null);
@@ -24,7 +27,7 @@ export const MenuNavBar = forwardRef(({ show }, ref) => {
     useEffect(() => {
         const theme = darkMode ? "dark" : "light";
         document.querySelector("body").setAttribute("data-theme", theme);
-        localStorage.setItem(darkModeKey, JSON.stringify(darkMode));
+        localStorage.setItem(process.env.REACT_APP_DARKMODE_KEY, JSON.stringify(darkMode));
     }, [darkMode]);
 
     useEffect(() => {
@@ -37,29 +40,46 @@ export const MenuNavBar = forwardRef(({ show }, ref) => {
         setDarkMode(!darkMode);
     }, [darkMode, setDarkMode]);
 
+    const handleBackMenu = useCallback(() => {
+        if (previousData !== null) setData(previousData);
+    }, [previousData]);
+
+    const handleLogout = useCallback(async () => {
+        setShowModal({ ...showModal, logOutModal: true });
+        // post log out and get response from sever
+        // ....
+
+        navigate(path.login);
+    }, [navigate, showModal]);
+
+    const handleSwitchAccount = () => {
+        setShowModal({ ...showModal, switchAccountModal: true });
+    };
+
+    const handleReportProblem = () => {
+        setShowModal({ ...showModal, reportProblemModal: true });
+    };
+
     const handleClickItem = useCallback(
-        (item) => {
+        async (item) => {
             if (item.children) {
                 setPreviousData(data);
                 setData(item.children);
             }
 
             if (item.title === titleMenuNavbar.logOut) {
-                setShowModal({ ...showModal, logOutModal: true });
+                await handleLogout();
             } else if (item.title === titleMenuNavbar.switchAccount) {
-                setShowModal({ ...showModal, switchAccountModal: true });
+                handleSwitchAccount();
             } else if (item.title === titleMenuNavbar.report) {
-                setShowModal({ ...showModal, reportProblemModal: true });
+                handleReportProblem();
             } else if (item.title === titleMenuNavbar.darkMode) {
                 changeTheme();
             }
         },
-        [data, showModal, changeTheme]
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        [data, handleLogout, showModal, changeTheme]
     );
-
-    const handleBackMenu = useCallback(() => {
-        if (previousData !== null) setData(previousData);
-    }, [previousData]);
 
     return (
         <section ref={ref} className={show ? "menu-navbar show" : "menu-navbar"}>

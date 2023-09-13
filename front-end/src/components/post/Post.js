@@ -26,9 +26,7 @@ export const Post = ({ className }) => {
     const [likeNumber, setLikeNumber] = useState(1);
     const [caption] = useState(captionPost);
     const [comment, setComment] = useState("");
-    const [imagePost] = useState(
-        "https://scontent.cdninstagram.com/v/t39.30808-6/364220695_667884602030116_5606720812416253058_n.jpg?stp=dst-jpg_e15&_nc_ht=scontent.cdninstagram.com&_nc_cat=104&_nc_ohc=cd2qPpjMQY0AX_DNcA-&edm=APs17CUAAAAA&ccb=7-5&ig_cache_key=MzE1ODM5MjkyMDEzOTMzMjMwMw%3D%3D.2-ccb7-5&oh=00_AfDKeJ7MtGoO0EKhcCQiurSoBe7m_BN6hgW87LAIAaL7LA&oe=64E9C90F&_nc_sid=10d13b"
-    );
+    const [imagePost] = useState(process.env.REACT_APP_DEFAULT_POST_IMG);
     const [timeLine] = useState("10m");
     const [showMoreCaption, setShowMoreCaption] = useState(true);
     const [showMoreModal, setShowMoreModal] = useState(false);
@@ -80,7 +78,15 @@ export const Post = ({ className }) => {
             <section className={`post ${className} pb-3`}>
                 <HeaderPost className="py-2" />
                 <Card className="post-body">
-                    <Card.Img className="post-img" src={imagePost} alt="post-img" />
+                    <div className={`wrapper-image ${!imagePost ? "loading" : ""}  w-100`}>
+                        {imagePost && (
+                            <Card.Img
+                                className="post-img position-absolute top-0 left-0"
+                                src={imagePost}
+                                alt="post-img"
+                            />
+                        )}
+                    </div>
                     <Card.Body>
                         <StatusBarPost />
                         <div className="caption">

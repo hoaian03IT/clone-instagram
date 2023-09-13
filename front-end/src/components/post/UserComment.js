@@ -1,6 +1,5 @@
 import { Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { defaultImage } from "~/constants";
 
 import "~/styles/user_comment.scss";
 
@@ -8,7 +7,7 @@ export const UserComment = ({ isCaption = false, caption, comment, timeline }) =
     return (
         <section className="user-comment d-flex align-items-start">
             <div className="user">
-                <Image roundedCircle src={defaultImage} alt="avatar" />
+                <Image className="avatar-medium" roundedCircle src={process.env.REACT_APP_DEFAULT_IMG} alt="avatar" />
             </div>
             <div className="comment ms-4">
                 <Link className="nickname fw-semibold">thanhxuan.nganngui</Link>&nbsp;

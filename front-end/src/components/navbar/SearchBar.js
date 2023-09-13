@@ -51,7 +51,7 @@ export const SearchBar = () => {
                 {hasResultSearched && (
                     <div className="header d-flex justify-content-between">
                         <span className="text">Recent</span>
-                        <span className="clear-all primary-text">Clear all</span>
+                        <span className="clear-all text-primary">Clear all</span>
                     </div>
                 )}
                 <ul className="searched-list">
@@ -61,7 +61,7 @@ export const SearchBar = () => {
                     <Link className="searched-item">
                         <ProfileCard nickname="dochet1989" isOfficial isFollowing username="Độ Phùng" />
                     </Link>
-                    <ProfileCardSkeletonLoading />
+                    <ProfileCardSkeletonLoading className="ps-4 my-2" />
                 </ul>
             </section>
         </section>

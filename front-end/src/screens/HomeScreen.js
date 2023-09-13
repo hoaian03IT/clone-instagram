@@ -5,6 +5,7 @@ import "~/styles/home_screen.scss";
 import { Link } from "react-router-dom";
 import { SwitchAccountModal } from "~/components/navbar/menuNavbar/modalMenuNavbar/SwitchAccountModal";
 import { useState } from "react";
+import { SkeletonPost } from "~/components/post/SkeletonPost";
 
 export const HomeScreen = () => {
     const [showSwitchAccountModal, setShowSwitchAccountModal] = useState(false);
@@ -23,15 +24,8 @@ export const HomeScreen = () => {
                 <div className="post-list">
                     <Post className="mt-2" />
                     <Post className="mt-2" />
-                    <Post className="mt-2" />
-                    <Post className="mt-2" />
-                    <Post className="mt-2" />
-                    <Post className="mt-2" />
-                    <Post className="mt-2" />
-                    <Post className="mt-2" />
-                    <Post className="mt-2" />
-                    <Post className="mt-2" />
-                    <Post className="mt-2" />
+                    <SkeletonPost className="mt-2" />
+                    <SkeletonPost className="mt-2" />
                 </div>
             </div>
             <div className="feed-content pt-3">
@@ -43,7 +37,7 @@ export const HomeScreen = () => {
                             <p className="username">Đặng An</p>
                         </div>
                         <span
-                            className="switch ms-auto primary-text fw-semibold"
+                            className="switch ms-auto text-primary fw-semibold"
                             onClick={handleShowSwitchAccountModal}>
                             Switch
                         </span>

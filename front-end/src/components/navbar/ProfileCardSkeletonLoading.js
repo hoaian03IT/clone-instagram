@@ -1,10 +1,10 @@
 import "~/styles/profile_card_skeleton_loading.scss";
 
-export const ProfileCardSkeletonLoading = () => {
+export const ProfileCardSkeletonLoading = ({ className }) => {
     return (
-        <section className="profile-card-skeleton-loading">
+        <section className={`profile-card-skeleton-loading ${className}`}>
             <div className="img loading"></div>
-            <div className="body">
+            <div className="profile-card-skeleton-body">
                 <div className="title loading"></div>
                 <div className="text loading"></div>
             </div>

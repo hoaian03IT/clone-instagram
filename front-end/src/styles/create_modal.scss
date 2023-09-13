@@ -56,10 +56,6 @@ $height-modal: calc(100vh - 300px);
         margin: 24px;
         border: 1px solid $separator-light-color;
         border-radius: 8px;
-        .avatar {
-            height: $small-avatar-size;
-            width: $small-avatar-size;
-        }
         .nickname {
             margin-left: 12px;
             font-size: $medium-font-size;

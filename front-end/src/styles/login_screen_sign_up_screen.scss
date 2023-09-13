@@ -1,0 +1,60 @@
+@use "variables" as *;
+
+.login-screen,
+.sign-up-screen {
+    height: 100vh;
+
+    .wrapper {
+        max-width: $form-login-width;
+
+        .form-login,
+        .more-part {
+            border: 1px solid $separator-light-color;
+        }
+
+        .form-login {
+            .instagram-logo {
+                height: 51px;
+                width: 175px;
+            }
+
+            .btn-submit {
+                font-size: $medium-font-size;
+            }
+            .separator {
+                font-size: $medium-font-size;
+                position: relative;
+                &::before {
+                    position: absolute;
+                    content: "";
+                    top: 50%;
+                    left: 0;
+                    width: 40%;
+                    border-top: 1px solid $separator-light-color;
+                    transform: translateY(-50%);
+                }
+                &::after {
+                    position: absolute;
+                    content: "";
+                    top: 50%;
+                    right: 0;
+                    width: 40%;
+                    transform: translateY(-50%);
+                    border-top: 1px solid $separator-light-color;
+                }
+            }
+            .more-information {
+                color: $gray-color;
+                font-size: $small-font-size;
+            }
+            .forgot-password {
+                font-size: $small-font-size;
+                color: $dark-blue-color;
+            }
+        }
+
+        .more-part {
+            font-size: $medium-font-size;
+        }
+    }
+}

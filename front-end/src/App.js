@@ -15,6 +15,10 @@ function App() {
                             <DefaultLayout>
                                 <Component />
                             </DefaultLayout>
+                        ) : item.layout === null ? (
+                            <div>
+                                <Component />
+                            </div>
                         ) : (
                             <SecondaryLayout>
                                 <Component />

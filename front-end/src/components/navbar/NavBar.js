@@ -148,7 +148,12 @@ export const NavBar = ({ alwaysNarrow = false }) => {
                             }
                             onClick={() => handleOnClickNavLink("Profile")}>
                             <span className="image">
-                                <Image roundedCircle src={personalAvatar} alt="personal-avatar" />
+                                <Image
+                                    className="avatar-smaller"
+                                    roundedCircle
+                                    src={personalAvatar}
+                                    alt="personal-avatar"
+                                />
                             </span>
                             <span className="text">Profile</span>
                         </NavLink>

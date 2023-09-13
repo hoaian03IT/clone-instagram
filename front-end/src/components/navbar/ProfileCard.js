@@ -1,8 +1,6 @@
 import { useContext } from "react";
-import { Card, CloseButton } from "react-bootstrap";
+import { Card, CloseButton, Image } from "react-bootstrap";
 import { CircleVerifiedIcon } from "~/assets/icons/CircleVerifiedIcon";
-import { defaultImage } from "~/constants";
-
 import "~/styles/profile_card.scss";
 import { ProviderContext } from "../Provider";
 
@@ -10,7 +8,13 @@ export const ProfileCard = ({ avatar, username, nickname, isOfficial, isFollowin
     const { darkMode } = useContext(ProviderContext);
     return (
         <Card className="profile-card d-flex flex-row align-items-center">
-            <Card.Img src={avatar || defaultImage} alt={nickname} />
+            <Card.Img
+                as={Image}
+                roundedCircle
+                className="avatar-large"
+                src={avatar || process.env.REACT_APP_DEFAULT_IMG}
+                alt={nickname}
+            />
             <Card.Body>
                 <Card.Subtitle className="title d-flex align-items-center">
                     <span className="nickname fw-semibold">{nickname}</span>

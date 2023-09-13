@@ -20,10 +20,12 @@ $small-avatar-size: 28px;
 $medium-avatar-size: 34px;
 $large-avatar-size: 44px;
 $post-width: 468px;
+$form-login-width: 350px;
 
 $bigger-medium-font-size: 16px;
 $medium-font-size: 14px;
 $small-font-size: 12px;
+$tiny-font-size: 10px;
 
 $red-color: #ff3040;
 $black-color: #000;
@@ -45,8 +47,48 @@ $active-dark-bgc: rgba(
     $alpha: 0.15,
 );
 
+// global keyframes
+
+@keyframes scanner {
+    0% {
+        transform: translate(-100%);
+    }
+    100% {
+        transform: translate(100%);
+    }
+}
+
+// ----------------------
+
 @mixin limit-line {
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow-x: hidden;
+}
+
+@mixin fit-image {
+    object-fit: cover;
+    object-position: center;
+}
+
+@mixin loading-background-skeleton {
+    position: relative;
+    background-color: rgba($color: $black-color, $alpha: 0.08);
+    transition: 0.2s ease-out;
+    overflow: hidden;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background-image: linear-gradient(
+            90deg,
+            rgba($white-color, 0) 0,
+            rgba($white-color, 0.2) 20%,
+            rgba($white-color, 0.5) 60%,
+            rgba($white-color, 0)
+        );
+        animation: scanner 1.2s ease-in-out infinite;
+    }
 }

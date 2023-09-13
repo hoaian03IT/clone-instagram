@@ -4,4 +4,6 @@ export const path = {
     reels: "/reels",
     message: "/direct/inbox",
     profile: "/:username",
+    login: "/login",
+    signUp: "/signup",
 };

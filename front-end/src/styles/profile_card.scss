@@ -6,11 +6,6 @@
     border: none;
     transition: 0.2s ease-out;
 
-    .card-img {
-        height: $large-avatar-size;
-        width: $large-avatar-size;
-        border-radius: 50%;
-    }
     .card-body {
         .title {
             font-size: $medium-font-size;

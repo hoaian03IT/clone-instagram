@@ -3,3 +3,9 @@
 .default-layout {
     min-height: 100vh;
 }
+
+body[data-theme="dark"] {
+    .default-layout {
+        background-color: $black-color;
+    }
+}

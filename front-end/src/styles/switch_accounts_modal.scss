@@ -18,6 +18,7 @@ $verified-icon-size: 23px;
                 .image-account {
                     height: $avatar-size;
                     width: $avatar-size;
+                    @include fit-image();
                 }
                 .nickname-account {
                     margin-left: 12px;

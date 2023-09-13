@@ -1,0 +1,48 @@
+@use "variables" as *;
+
+.input-form {
+    position: relative;
+
+    .show-and-hide-password {
+        position: absolute;
+        right: 8px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: $medium-font-size;
+        color: $gray-color;
+        cursor: pointer;
+        user-select: none;
+    }
+    .label {
+        padding-left: 8px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: $gray-color;
+        font-size: $tiny-font-size;
+        cursor: text;
+        transition: all 0.1s linear;
+    }
+    .input {
+        $padding-top-input: 12px;
+        $padding-bottom-input: 4px;
+        padding: $padding-top-input 8px $padding-bottom-input;
+        border-color: $separator-light-color;
+        border-radius: 2px;
+        background-color: rgba($color: #000000, $alpha: 0.02);
+        font-size: $small-font-size;
+        &:active,
+        &:focus {
+            border-color: rgba($color: #000000, $alpha: 0.2);
+        }
+
+        &[value=""] {
+            padding: calc(($padding-bottom-input + $padding-top-input) / 2) 8px;
+            & ~ .label {
+                top: 50%;
+                transform: translateY(-50%);
+                font-size: $small-font-size;
+            }
+        }
+    }
+}
